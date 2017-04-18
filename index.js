@@ -3,8 +3,10 @@ var express = require('express');
 var bodyParser = require('body-parser');
 
 // Find your account sid and auth token in your Twilio account Console.
-var client = twilio('PRIVATE', 'PRIVATE');
+var creds = require('./credentials');
+var client = twilio(creds.one, creds.two);
  
+
 // // Send the text message.
 // client.sendMessage({
 //   to: '+12245672736',
