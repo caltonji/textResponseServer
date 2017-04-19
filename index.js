@@ -26,7 +26,7 @@ app.post("/message", function (request, response) {
   } else if (message == "41" || message == "43") {
     text = "so close!";
   }
-  response.send("<Response><Message>" + response + "</Message></Response>")
+  response.send("<Response><Message>" + text + "</Message></Response>")
 });
  
 app.get("/", function (request, response) {
