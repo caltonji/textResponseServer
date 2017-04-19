@@ -19,7 +19,14 @@ app.use(bodyParser.urlencoded({extended: false}));
  
 app.post("/message", function (request, response) {
   console.log(request.body); 
-  response.send("<Response><Message>Hello</Message></Response>")
+  message = request.body.Body;
+  var response = "What is the meaning of life?";
+  if (message == "42") {
+    response = "correct!";
+  } else if (message == "41" || message == "43") {
+    response = "so close!";
+  }
+  response.send("<Response><Message>" + response + "</Message></Response>")
 });
  
 app.get("/", function (request, response) {
