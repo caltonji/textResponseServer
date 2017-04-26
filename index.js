@@ -22,7 +22,7 @@ app.post("/message", function (request, response) {
   message = request.body.Body;
   var text = "What is the meaning of life?";
   if (message == "42") {
-    text = "correct!";
+    text = "correct.";
   } else if (message == "41" || message == "43") {
     text = "so close!";
   }
