@@ -18,16 +18,25 @@ var app = express();
 app.use(bodyParser.urlencoded({extended: false}));
  
 app.post("/message", function (request, response) {
-  console.log(request.body); 
-  message = request.body.Body;
-  var text = "What is the meaning of life?";
-  if (message == "42") {
-    text = "correct.";
-  } else if (message == "41" || message == "43") {
-    text = "so close!";
-  }
-  response.send("<Response><Message>" + text + "</Message></Response>")
+    console.log(request.body);
+    message = request.body.Body;
+
+    var upperMessage = message.toUpperCase();
+
+    var text = "Goodbye";
+
+    if (upperMessage == "HI" || upperMessage == "HELLO" || upperMessage == "HEY"){
+        text = "What color is the sky?";
+    } else if (upperMessage == "BLUE"){
+        text = "Good Job!";
+    }
+
+
+    response.send("<Response><Message>" + text + "</Message></Response>")
 });
+
+
+
  
 app.get("/", function (request, response) {
   response.sendFile(__dirname + '/views/index.html');
